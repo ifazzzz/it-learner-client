@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+    <div>
+        
+    </div>
 };
 
 export default Home;
