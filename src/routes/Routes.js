@@ -30,6 +30,11 @@ export const router = createBrowserRouter([
                 loader: () => fetch('https://it-learner-server-ifazzzz.vercel.app/courses')
             },
             {
+                path: '/courses/:id',
+                element:<CourseDetails/>,
+                loader: ({params}) => fetch(`https://it-learner-server-ifazzzz.vercel.app/courses/${params.id}`)
+            },
+            {
                 path: '/blog',
                 element:<Blog/>
             },
@@ -45,11 +50,7 @@ export const router = createBrowserRouter([
                 path: '/register',
                 element:<Register/>
             },
-            {
-                path: '/details',
-                element:<CourseDetails/>
-            }
-          
+    
         ]
     }
 ])

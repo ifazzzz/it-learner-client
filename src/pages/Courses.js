@@ -8,15 +8,15 @@ const Courses = () => {
     return (
         <div className="grid grid-cols-2">
             <div>
-                <CourseSidebar></CourseSidebar>
-            </div>
-            <div>
             {
                 courses.map(course => <CoursePage
-                key={course.id}
-                course={course}
-                ></CoursePage>)
+                    key={course.id}
+                    course={course}
+                    ></CoursePage>)
             }
+            </div>
+            <div>
+                <CourseSidebar></CourseSidebar>
             </div>
             
         </div>

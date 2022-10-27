@@ -17,7 +17,7 @@ const CourseSidebar = () => {
             categories.map(c => <p
             key={c.id}
             >
-                <Link>{c.title}</Link>
+                <Link to={`/courses/${c.id}`}>{c.title}</Link>
             </p>)
            } 
         </div>

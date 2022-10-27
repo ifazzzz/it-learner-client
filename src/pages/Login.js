@@ -2,10 +2,19 @@ import { Button, Card, Checkbox, Label, TextInput } from 'flowbite-react';
 import React from 'react';
 
 const Login = () => {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value; 
+        const password = form.password.value;
+        console.log(email,password); 
+    }
+
     return (
-        <div className="max-w-sm">
+        <div className="max-w-sm container mx-auto">
             <Card>
-                <form className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
                     <div className="mb-2 block">
                     <Label
@@ -16,7 +25,8 @@ const Login = () => {
                     <TextInput
                     id="email1"
                     type="email"
-                    placeholder="name@flowbite.com"
+                    name="email"
+                    placeholder="your email address"
                     required={true}
                     />
                 </div>
@@ -30,6 +40,7 @@ const Login = () => {
                     <TextInput
                     id="password1"
                     type="password"
+                    name="password"
                     required={true}
                     />
                 </div>
@@ -42,6 +53,8 @@ const Login = () => {
                 <Button type="submit">
                     Submit
                 </Button>
+                <Button>google</Button>
+                <Button>git hub</Button>
                 </form>
             </Card>
         </div>

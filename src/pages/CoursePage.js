@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CoursePage = ({course}) => {
     
-    const {name, img, headline, price} = course;
+    const {name, img, headline, price, id} = course;
 
     return (
  
@@ -18,6 +18,7 @@ const CoursePage = ({course}) => {
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                     {headline}
                     </p>
+                    <Link to={`/courses/${id}`}>details</Link>
                 </Card>
                 </div>
 
