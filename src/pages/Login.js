@@ -1,11 +1,16 @@
 
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Login = () => {
+
     const navigate = useNavigate()
+
     const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext)
+
+    const [error , setError] = useState('')
     
     const location = useLocation();
      
@@ -23,9 +28,11 @@ const Login = () => {
             const user = result.user
             console.log(user);
             form.reset();
+            setError('')
             navigate(from, {replace : true})
         })
         .catch((error) => {
+            setError(error.message)
             console.error(error);
         })
     }
@@ -91,6 +98,7 @@ const Login = () => {
             <p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
                 <Link to='/register' className="underline text-gray-800">Sign up</Link>
             </p>
+            <p className="text-red-700 text-center">{error}</p>
         </div>
         </div>
     );

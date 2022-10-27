@@ -1,11 +1,13 @@
 
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, user} = useContext(AuthContext);
+    const [error, setError] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,9 +20,12 @@ const Register = () => {
         createUser(email, password)
         .then((result) => {
             const user = result.user;
+            form.reset();
             console.log(user);
+            setError('')
         })
         .catch((error) => {
+            setError(error.message);
             console.error(error);
         })
     }
@@ -58,7 +63,9 @@ const Register = () => {
                     <div>
                         <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-slate-600 text-gray-50">Sign up</button>
                     </div>
-                    
+                    {
+                        user && <p className="text-center text-red-700">{error}</p>
+                     }
                 </div>
             </form>
         </div>
