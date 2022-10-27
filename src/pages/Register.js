@@ -1,7 +1,6 @@
-import { Button, Card, Checkbox, Label, TextInput } from 'flowbite-react';
+
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Register = () => {
@@ -27,65 +26,40 @@ const Register = () => {
     }
 
     return (
-        <div className="max-w-sm container mx-auto">
-            <Card>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div>
-                    <div className="mb-2 block">
-                    <Label
-                        htmlFor="Name"
-                        value="Your Name"
-                    />
+        <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800">
+            <div className="mb-8 text-center">
+                <h1 className="my-3 text-4xl font-bold">Sign up</h1>
+                <p className="text-sm text-gray-600">Sign up to get access</p>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-12 ng-untouched ng-pristine ng-valid">
+                <div className="space-y-4">
+                    <div>
+                        <label for="name" className="block mb-2 text-sm">Full Name</label>
+                        <input type="text" name="name" id="name" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
                     </div>
-                    <TextInput
-                    id="name1"
-                    type="text"
-                    name="name"
-                    placeholder="your name"
-                    required={true}
-                    />
-                </div>
-                <div>
-                    <div className="mb-2 block">
-                    <Label
-                        htmlFor="email1"
-                        value="Your email"
-                    />
+                    <div>
+                        <label for="photo" className="block mb-2 text-sm">Photo URL</label>
+                        <input type="text" name="photo" id="photo" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
                     </div>
-                    <TextInput
-                    id="email1"
-                    type="email"
-                    name="email"
-                    placeholder="your email address"
-                    required={true}
-                    />
-                </div>
-                <div>
-                    <div className="mb-2 block">
-                    <Label
-                        htmlFor="password1"
-                        value="Your password"
-                    />
+                    <div>
+                        <label for="email" className="block mb-2 text-sm">Email address</label>
+                        <input type="email" name="email" id="email" placeholder="enter email address" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
                     </div>
-                    <TextInput
-                    id="password1"
-                    type="password"
-                    name="password"
-                    required={true}
-                    />
+                    <div>
+                        <div className="flex justify-between mb-2">
+                            <label for="password" className="text-sm">Password</label>
+                            
+                        </div>
+                        <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
+                    </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    <Checkbox id="remember" />
-                    <Label htmlFor="remember">
-                    Remember me
-                    </Label>
+                <div className="space-y-2">
+                    <div>
+                        <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-slate-600 text-gray-50">Sign up</button>
+                    </div>
+                    
                 </div>
-                <Button type="submit">
-                    Submit
-                </Button>
-                
-                </form>
-            </Card>
+            </form>
         </div>
     );
 };

@@ -44,7 +44,7 @@ const Header = () => {
                     <Dropdown
                         arrowIcon={false}
                         inline={true}
-                        label={<Avatar alt="User settings" img={user?.photoURL
+                        label={<Avatar title={user?.email} alt="User settings" img={user?.photoURL
                         } rounded={true}/>}
                         >
                         <Dropdown.Header>
