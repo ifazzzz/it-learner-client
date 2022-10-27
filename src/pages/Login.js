@@ -46,6 +46,7 @@ const Login = () => {
         .catch((error) => {
             console.error(error);
         })
+        
     }
 
     const handleGithubSignup = () => {
@@ -72,7 +73,7 @@ const Login = () => {
                     <label for="password" className="block text-gray-600">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-cyan-600" />
                     <div className="flex justify-end text-xs text-gray-600">
-                        <a>Forgot Password?</a>
+                        
                     </div>
                 </div>
                 <button type="submit" className="block w-full p-3 text-center rounded-sm text-gray-50 bg-slate-600">Sign in</button>

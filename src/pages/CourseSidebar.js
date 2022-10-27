@@ -15,7 +15,7 @@ const CourseSidebar = () => {
         <div>
            {
             categories.map(c => <div
-            className="w-2/3 bg-slate-50 p-4 rounded:md shadow-md my-4 text-center"
+            className="md:w-2/3 bg-slate-50 p-4 rounded:md shadow-md my-4 text-center"
             key={c.id}
             >
                 <Link to={`/courses/${c.id}`}>{c.title}</Link>

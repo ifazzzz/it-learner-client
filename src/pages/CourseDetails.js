@@ -1,9 +1,8 @@
 import React from 'react';
-import { createContext } from 'react';
 import { HiArrowDown } from 'react-icons/hi';
 import { Link, useLoaderData } from 'react-router-dom';
 import Pdf from "react-to-pdf";
-import Checkout from '../others/Checkout';
+
 
 
 
@@ -40,7 +39,7 @@ const CourseDetails = () => {
 				<div className="p-4 space-y-2 text-sm text-gray-600">
 					<p>{description}</p>
 				</div>
-				<button><Link to={`/premium/${id}`}>get Premium Access</Link></button>
+				<button className="bg-slate-300 p-2"><Link to={`/premium/${id}`}>get Premium Access</Link></button>
 			</div>  
         </div>
 		

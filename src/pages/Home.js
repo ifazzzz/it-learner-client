@@ -9,48 +9,19 @@ const Home = () => {
     <section className="bg-gray-100 text-gray-800">
 	 <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
 		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-			<h1 className="text-5xl font-bold leading-none sm:text-6xl">Ac mattis
-				<span className="text-slate-500">senectus</span>erat pharetra
-			</h1>
-			<p className="mt-6 mb-8 text-lg sm:mb-12">Dictum aliquam porta in condimentum ac integer
-				<br className="hidden md:inline lg:hidden"/>turpis pulvinar, est scelerisque ligula sem
+			<h1 className="text-5xl font-bold leading-none sm:text-6xl">Information Technology,
+				<span className="text-slate-500">organize, store, share</span> You’re using IT</h1>
+			<p className="mt-6 mb-8 text-lg sm:mb-12">Information Technology,
+				<br className="hidden md:inline lg:hidden"/>organize, store, share
 			</p>
 			<div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-				<a  className="px-8 py-3 text-lg font-semibold rounded bg-slate-500 text-gray-50">Suspendisse</a>
-				<a  className="px-8 py-3 text-lg font-semibold border rounded border-gray-800">Malesuada</a>
+				<Link to='/courses'  className="px-8 py-3 text-lg font-semibold rounded bg-slate-500 text-gray-50">courses</Link>
+				<Link to ='/blog' className="px-8 py-3 text-lg font-semibold border rounded border-gray-800">See More</Link>
 			</div>
 		</div>
 
         <Register></Register>
-        {/* <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800">
-            <div className="mb-8 text-center">
-                <h1 className="my-3 text-4xl font-bold">Sign in</h1>
-                <p className="text-sm text-gray-600">Sign in to access your account</p>
-            </div>
-            <form novalidate="" action="" className="space-y-12 ng-untouched ng-pristine ng-valid">
-                <div className="space-y-4">
-                    <div>
-                        <label for="email" className="block mb-2 text-sm">Email address</label>
-                        <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
-                    </div>
-                    <div>
-                        <div className="flex justify-between mb-2">
-                            <label for="password" className="text-sm">Password</label>
-                            <a  className="text-xs hover:underline text-gray-600">Forgot password?</a>
-                        </div>
-                        <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
-                    </div>
-                </div>
-                <div className="space-y-2">
-                    <div>
-                        <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-slate-500 text-gray-50">Sign in</button>
-                    </div>
-                    <p className="px-6 text-sm text-center text-gray-600">Don't have an account yet?
-                        <a  className="hover:underline text-slate-500">Sign up</a>.
-                    </p>
-                </div>
-            </form>
-        </div> */}
+    
      </div>
     </section>
 

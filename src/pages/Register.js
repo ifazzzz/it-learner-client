@@ -2,17 +2,19 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Register = () => {
 
-    const {createUser, user} = useContext(AuthContext);
+    const {createUser, user, updateUserProfile, verifyEmail} = useContext(AuthContext);
     const [error, setError] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value; 
         const password = form.password.value;
         console.log(name, email,password); 
@@ -21,13 +23,32 @@ const Register = () => {
         .then((result) => {
             const user = result.user;
             form.reset();
-            console.log(user);
             setError('')
+            updateUser(name, photoURL);
+            handleEmailVerification();
+            toast.success('e-mail verification send')
+            console.log(user);
         })
         .catch((error) => {
             setError(error.message);
             console.error(error);
         })
+    }
+
+    const updateUser = (name, photoURL) => {
+        const profile = {
+            displayName : name,
+            photoURL : photoURL
+        }
+        updateUserProfile(profile)
+        .then(() => {})
+        .catch(error => console.error(error))
+    }
+
+    const handleEmailVerification = () => {
+        verifyEmail()
+        .then(() => {})
+        .catch(error => console.error(error))
     }
 
     return (
@@ -45,7 +66,7 @@ const Register = () => {
                     </div>
                     <div>
                         <label for="photo" className="block mb-2 text-sm">Photo URL</label>
-                        <input type="text" name="photo" id="photo" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
+                        <input type="text" name="photoURL" id="photo" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
                     </div>
                     <div>
                         <label for="email" className="block mb-2 text-sm">Email address</label>

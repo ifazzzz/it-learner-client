@@ -5,7 +5,7 @@ import { HiArrowSmRight } from "react-icons/hi";
 
 const CoursePage = ({course}) => {
     
-    const {name, img, headline, price, id} = course;
+    const {name, img, headline, id} = course;
 
     return (
                
@@ -18,7 +18,7 @@ const CoursePage = ({course}) => {
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                     {headline}
                     </p>
-                    <Link className="text-slate-800" to={`/courses/${id}`}>View More<HiArrowSmRight></HiArrowSmRight></Link>
+                    <Link className="text-slate-800 bg-slate-200 p-2" to={`/courses/${id}`}>View More<HiArrowSmRight></HiArrowSmRight></Link>
                 </Card>
                 </div>
 

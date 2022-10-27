@@ -1,8 +1,7 @@
 import React from 'react';
-import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { BsFillArrowRightCircleFill, BsFillGrid3X3GapFill, BsFillTagsFill } from "react-icons/bs";
-import { CourseContext } from '../pages/CourseDetails';
+
 
 const Checkout = () => {
     const access = useLoaderData()

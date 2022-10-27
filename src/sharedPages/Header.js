@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Header = () => {
+
     const {user, logOut} = useContext(AuthContext);
 
     const handleLogOut = () => {
@@ -17,10 +18,9 @@ const Header = () => {
         })
     }
 
-    console.log(user);
     return (
         <div className="py-5 px-5">
-            <Navbar
+        <Navbar
             fluid={true}
             rounded={true}
             >
@@ -55,7 +55,7 @@ const Header = () => {
                     <Dropdown
                         arrowIcon={false}
                         inline={true}
-                        label={<Avatar title={user?.email} alt="User settings" img={user?.photoURL
+                        label={<Avatar title={user?.displayName} alt="User settings" img={user?.photoURL
                         } rounded={true}/>}
                         >
                         <Dropdown.Header>
@@ -82,10 +82,8 @@ const Header = () => {
                         Login                  
                         </NavLink>
                     </div>
-                }
-                 
-                 <Navbar.Toggle />
-                
+                }                 
+                 <Navbar.Toggle />               
             </div>
             <Navbar.Collapse>
                 <NavLink to='/home'>
