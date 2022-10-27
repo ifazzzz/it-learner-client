@@ -1,3 +1,45 @@
+# project Name : It Learner
+
+# Live Site : []
+
+# Project Summary
+This project is a educational website that provides different Courses on Information Technology. A user Can buy 8 types of courses. this courses provide high demand skills that you can buy to shape your future. 
+
+# Features :
+* User Authentication with email & password , google and github.
+* educational platform that provides access to high quality courses.
+* Single Page Application. 
+* provides premium access to signed users.
+* responsive in any type of devices.
+
+
+# Technologies used :
+
+* React.js
+* React-Router
+* tailwind css
+* Flowbite Component library
+* React-icons
+* React-to-pdf
+* Firebase 
+* Email Authentication
+* Google Authentication 
+* github Authentication
+
+# Available Pages :
+
+* Home
+* Courses
+* Blog
+* login
+* register
+* Faq
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
