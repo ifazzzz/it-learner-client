@@ -1,6 +1,7 @@
 import { Button, Card, Checkbox, Label, TextInput } from 'flowbite-react';
 import React from 'react';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Register = () => {
@@ -82,6 +83,7 @@ const Register = () => {
                 <Button type="submit">
                     Submit
                 </Button>
+                
                 </form>
             </Card>
         </div>

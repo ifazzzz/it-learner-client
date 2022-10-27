@@ -1,8 +1,12 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import React from 'react';
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider';
 
 const Header = () => {
+    const {user} = useContext(AuthContext)
+    console.log(user);
     return (
         <Navbar
             fluid={true}
@@ -74,6 +78,11 @@ const Header = () => {
                 <NavLink to='/Blog'>
                     <Navbar.Link>
                       Blog
+                    </Navbar.Link>
+                </NavLink>               
+                <NavLink to='/Blog'>
+                    <Navbar.Link>
+                      {user?.email}
                     </Navbar.Link>
                 </NavLink>               
             </Navbar.Collapse>
