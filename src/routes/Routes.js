@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
+import Checkout from "../others/Checkout";
 import ErrorPage from "../others/ErrorPage";
 import Blog from "../pages/Blog";
 import CourseDetails from "../pages/CourseDetails";
@@ -8,6 +9,7 @@ import FAQ from "../pages/FAQ";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -34,6 +36,7 @@ export const router = createBrowserRouter([
                 element:<CourseDetails/>,
                 loader: ({params}) => fetch(`https://it-learner-server-ifazzzz.vercel.app/courses/${params.id}`)
             },
+            
             {
                 path: '/blog',
                 element:<Blog/>
@@ -50,6 +53,11 @@ export const router = createBrowserRouter([
                 path: '/register',
                 element:<Register/>
             },
+            {
+                path: '/premium/:id',
+                element : <PrivateRoute><Checkout/></PrivateRoute>,
+                loader: ({params}) => fetch(`https://it-learner-server-ifazzzz.vercel.app/premium/${params.id}`)
+            }
     
         ]
     }

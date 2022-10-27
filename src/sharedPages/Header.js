@@ -5,7 +5,18 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() =>{
+
+        })
+        .catch((error) =>{
+            console.error(error)
+        })
+    }
+
     console.log(user);
     return (
         <div className="py-5 px-5">
@@ -60,7 +71,7 @@ const Header = () => {
                         </Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item>
-                            <Link to='/login'>Log out</Link>
+                            <Link onClick={handleLogOut}>Log out</Link>
                         </Dropdown.Item>
                     </Dropdown>
                     

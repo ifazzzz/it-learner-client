@@ -1,17 +1,22 @@
 import React from 'react';
+import { createContext } from 'react';
 import { HiArrowDown } from 'react-icons/hi';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Pdf from "react-to-pdf";
+import Checkout from '../others/Checkout';
+
+
 
 const ref = React.createRef();
 
 const CourseDetails = () => {
     const details = useLoaderData()
-    const {description, name, price, img} = details;
-    // console.log(details);
+    const {description, name, price, img, id} = details;
+    console.log(details);
     return (
 		
-        <div className="my-12">
+        <>
+		<div className="my-12">
             <div ref={ref} className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800">
 				<div className="flex justify-between p-4">
 					<div className="flex space-x-4">
@@ -35,8 +40,12 @@ const CourseDetails = () => {
 				<div className="p-4 space-y-2 text-sm text-gray-600">
 					<p>{description}</p>
 				</div>
+				<button><Link to={`/premium/${id}`}>get Premium Access</Link></button>
 			</div>  
         </div>
+		
+		</>
+		
     );
 };
 
