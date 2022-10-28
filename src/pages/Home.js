@@ -1,30 +1,23 @@
-import { Carousel } from 'flowbite-react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Register from './Register';
 
 const Home = () => {
     return (
+        // Header contents
         <>
-    <section className="bg-gray-100 text-gray-800">
-	 <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-			<h1 className="text-5xl font-bold leading-none sm:text-6xl">Information Technology,
-				<span className="text-slate-500">organize, store, share</span> You’re using IT</h1>
-			<p className="mt-6 mb-8 text-lg sm:mb-12">Information Technology,
-				<br className="hidden md:inline lg:hidden"/>organize, store, share
-			</p>
-			<div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-				<Link to='/courses'  className="px-8 py-3 text-lg font-semibold rounded bg-slate-500 text-gray-50">courses</Link>
-				<Link to ='/blog' className="px-8 py-3 text-lg font-semibold border rounded border-gray-800">See More</Link>
-			</div>
-		</div>
-
-        <Register></Register>
-    
-     </div>
-    </section>
-
+        <section className="bg-gray-100 text-gray-800">
+            <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
+                <h1 className="text-4xl font-bold leading-none sm:text-5xl">IF YOU’RE LOOKING TO MAKE 
+                    <span className="text-slate-600">IT SKILLS INVESTMENT </span>THIS YEAR
+                </h1>
+                <p className="px-8 mt-8 mb-12 text-lg">Then this are the best courses for you lo leran in 2022. we analyzed the most popular Global Knowledge training courses, as well as the following data gathered from over 9,000 IT professionals </p>
+                <div className="flex flex-wrap justify-center">
+                    <Link to='/courses'><button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-slate-600 hover:bg-slate-900 text-gray-50">Explore Courses</button></Link>
+                    <Link to='/register'><button className="px-8 py-3 m-2 text-lg border rounded text-gray-900 border-gray-300">Register Now</button></Link>
+                </div>
+            </div>
+        </section>
+        {/* course overview */}
         <div className="bg-gray-100">
             <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
@@ -81,10 +74,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Football Sports</p>
+                    <p className="mb-2 font-bold">Data Science</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
+                    Data science refers to scientific methods, tools, processes, and algorithms to extract information and insights from structured and unstructured data.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -106,10 +98,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Bowling Sports</p>
+                    <p className="mb-2 font-bold">Cloud Computing</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Disrupt inspire and think tank, social entrepreneur but
-                        preliminary thinking think tank compelling.
+                    Cloud computing refers to storing and accessing computing services, such as databases, software, servers, networking, and analytics, over the internet.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -131,10 +122,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Cycling Sports</p>
+                    <p className="mb-2 font-bold">Artificial Intelligence</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        A slice of heaven. O for awesome, this chocka full cuzzie is as
-                        rip-off as a cracker.
+                    Artificial Intelligence refers to the intelligence demonstrated by machines. AI professionals focus on building machines that are programmed to think like humans.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -156,10 +146,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Weight Lifting Sports</p>
+                    <p className="mb-2 font-bold">DevOps</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Meanwhile, in behind the bicycle shed, Hercules Morse, as big as
-                        a horse.
+                    DevOps is a set of practices and tools that combine software development and IT operations to shorten the systems development life cycle. In simple terms, it aims to make building, testing, and releasing software-faster and more reliable.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -181,10 +170,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Golf Sports</p>
+                    <p className="mb-2 font-bold">Blockchain</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Disrupt inspire and think tank, social entrepreneur but
-                        preliminary thinking think tank compelling.
+                    Also referred to as Distributed Ledger Technology (DLT), Blockchain is a digital ledger of transactions duplicated and distributed thousands of times across a network of computer systems on the blockchain.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -206,10 +194,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Hockey Sports</p>
+                    <p className="mb-2 font-bold">RPA (Robotic Process Automation)</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        A business big enough that it could be listed on the NASDAQ goes
-                        belly up.
+                    Robotic Process Automation refers to the application of technology governed by businesses to perform automating. Simply put, RPA is the process of creating a software robot to automate any repeatable business process.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -231,10 +218,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Shooting Sports</p>
+                    <p className="mb-2 font-bold">Augmented Reality (AR) and Virtual Reality (VR)</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Lookout flogging bilge rat main sheet bilge water nipper fluke
-                        to go on account heave down clap of thunder.
+                    Augmented reality (AR) and Virtual Reality (VR) are the technologies that bridge the real and virtual worlds. These technologies enable users to view information and content visually.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -256,10 +242,9 @@ const Home = () => {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Martial Arts</p>
+                    <p className="mb-2 font-bold">Cybersecurity</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr
-                        zimbra, mobly napster.
+                    Cyber security is another one of the most in-demand tech skills. Cybersecurity deals with safeguarding computer systems and networks from cyber-attacks.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />

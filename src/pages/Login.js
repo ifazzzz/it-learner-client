@@ -13,9 +13,9 @@ const Login = () => {
     const [error , setError] = useState('')
     
     const location = useLocation();
-     
+    //  redirect to desired page
     const from = location.state?.from?.pathname || '/';
-
+    // form submit
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -36,11 +36,13 @@ const Login = () => {
             console.error(error);
         })
     }
-
+    // google sign in
     const handleGoogleSignup = () => {
         googleSignIn()
         .then((result) => {
-            const user = result.user
+            const user = result.user;
+            setError('')
+            navigate(from, {replace : true})
             console.log(user);
         })
         .catch((error) => {
@@ -48,11 +50,13 @@ const Login = () => {
         })
         
     }
-
+    // github sign in
     const handleGithubSignup = () => {
         githubSignIn()
         .then((result) => {
             const user = result.user
+            setError('')
+            navigate(from, {replace : true})
             console.log(user);
         })
         .catch((error) => {
@@ -97,7 +101,7 @@ const Login = () => {
                 </button>
             </div>
             <p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
-                <Link to='/register' className="underline text-gray-800">Sign up</Link>
+                <Link to='/register' className="underline text-gray-800">Register Now</Link>
             </p>
             <p className="text-red-700 text-center">{error}</p>
         </div>

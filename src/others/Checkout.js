@@ -4,9 +4,10 @@ import { BsFillArrowRightCircleFill, BsFillGrid3X3GapFill, BsFillTagsFill } from
 
 
 const Checkout = () => {
+
     const access = useLoaderData()
-    console.log(access);
     const {name, price, duration, headline} = access;
+    // premium access page
     return (
         <div className="my-20">
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800">

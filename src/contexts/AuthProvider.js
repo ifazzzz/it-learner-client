@@ -8,7 +8,7 @@ import { useState } from 'react';
 export const AuthContext = createContext();
 
 const auth = getAuth(app);
-
+// Auth providers
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
@@ -16,7 +16,8 @@ const AuthProvider = ({children}) => {
      
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null)
-
+     
+    // firebase authentication functions
     const createUser = (email, password) => {
         setLoading(true)
        return createUserWithEmailAndPassword(auth, email, password)
@@ -49,7 +50,7 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signOut(auth)
     }
-    
+    // getting the logged in user info
     useEffect(() => {
         
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -62,7 +63,7 @@ const AuthProvider = ({children}) => {
         } 
 
     },[])
-
+    // sending contexts
     const value = {
         user, 
         loading,

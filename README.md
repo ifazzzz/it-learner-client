@@ -1,17 +1,18 @@
 # project Name : It Learner
 
-# Live Site : [https://it-learner-server-ifazzzz.vercel.app]
+# Live Site : [https://it-learner-90735.web.app/]
 
 # Project Summary
 This project is a educational website that provides different Courses on Information Technology. A user Can buy 8 types of courses. this courses provide high demand skills that you can buy to shape your future. 
 
-# Features :
+# Features & functionality :
+
 * User Authentication with email & password , google and github.
 * educational platform that provides access to high quality courses.
 * Single Page Application. 
 * provides premium access to signed users.
+* course content can be downloaded as pdf.
 * responsive in any type of devices.
-
 
 # Technologies used :
 

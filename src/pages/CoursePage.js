@@ -1,14 +1,14 @@
 import { Card } from 'flowbite-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HiArrowSmRight } from "react-icons/hi";
+
 
 const CoursePage = ({course}) => {
     
     const {name, img, headline, id} = course;
 
     return (
-               
+            //    course cards
                 <div className="">
                 <Card
                     imgSrc={img}>
@@ -18,7 +18,7 @@ const CoursePage = ({course}) => {
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                     {headline}
                     </p>
-                    <Link className="text-slate-800 bg-slate-200 p-2" to={`/courses/${id}`}>View More<HiArrowSmRight></HiArrowSmRight></Link>
+                    <Link className="text-slate-800 bg-gray-200 px-2 py-3 rounded-md text-center" to={`/courses/${id}`}>See Details</Link>
                 </Card>
                 </div>
 

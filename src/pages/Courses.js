@@ -6,25 +6,23 @@ import CourseSidebar from './CourseSidebar';
 const Courses = () => {
     const courses = useLoaderData()
     return (
+        // course container
         <div className="container mx-auto my-20">
-          <div className="grid md:grid-cols-3">
-    
-            <div>
-                <CourseSidebar></CourseSidebar>
-            </div>
-
-            <div className="col-span-2">
-                <div className="grid md:grid-cols-2 md:gap-4">
-                {
-                    courses.map(course => <CoursePage
-                        key={course.id}
-                        course={course}
-                        ></CoursePage>)
-                }
+            <div className="grid md:grid-cols-3">       
+                <div>
+                    <CourseSidebar></CourseSidebar>
+                </div>
+                <div className="col-span-2">
+                    <div className="grid md:grid-cols-2 md:gap-6">
+                    {
+                        courses.map(course => <CoursePage
+                            key={course.id}
+                            course={course}
+                            ></CoursePage>)
+                    }
+                    </div>
                 </div>
             </div>
-            
-          </div>
         </div>
     );
 };

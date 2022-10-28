@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const CourseSidebar = () => {
+    
     const [categories , setCategories] = useState([])
 
     useEffect(() =>{

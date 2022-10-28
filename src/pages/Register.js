@@ -3,10 +3,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Register = () => {
-
+    const navigate = useNavigate()
     const {createUser, user, updateUserProfile, verifyEmail} = useContext(AuthContext);
     const [error, setError] = useState('')
 
@@ -26,6 +27,7 @@ const Register = () => {
             setError('')
             updateUser(name, photoURL);
             handleEmailVerification();
+            navigate('/login')
             toast.success('e-mail verification send')
             console.log(user);
         })
@@ -52,8 +54,8 @@ const Register = () => {
     }
 
     return (
-        <div className="">
-            <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800">
+        <div className="container mx-auto my-12">
+            <div className="flex flex-col w-1/3 mx-auto p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800">
             <div className="mb-8 text-center">
                 <h1 className="my-3 text-4xl font-bold">Sign up</h1>
                 <p className="text-sm text-gray-600">Sign up to get access</p>
@@ -62,22 +64,22 @@ const Register = () => {
                 <div className="space-y-4">
                     <div>
                         <label for="name" className="block mb-2 text-sm">Full Name</label>
-                        <input type="text" name="name" id="name" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
+                        <input type="text" name="name" id="name" placeholder="Enter Full Name" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" required/>
                     </div>
                     <div>
                         <label for="photo" className="block mb-2 text-sm">Photo URL</label>
-                        <input type="text" name="photoURL" id="photo" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
+                        <input type="text" name="photoURL" id="photo" placeholder="Enter photo URL" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" required/>
                     </div>
                     <div>
                         <label for="email" className="block mb-2 text-sm">Email address</label>
-                        <input type="email" name="email" id="email" placeholder="enter email address" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
+                        <input type="email" name="email" id="email" placeholder="Enter email address" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" required/>
                     </div>
                     <div>
                         <div className="flex justify-between mb-2">
                             <label for="password" className="text-sm">Password</label>
                             
                         </div>
-                        <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
+                        <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" required/>
                     </div>
                 </div>
                 <div className="space-y-2">

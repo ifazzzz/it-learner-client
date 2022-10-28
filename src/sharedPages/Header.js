@@ -43,7 +43,7 @@ const Header = () => {
                     <span>Light</span>
                     <span className="relative">
                         <input id="Toggle1" type="checkbox" className="hidden peer" />
-                        <div className="w-10 h-6 rounded-full shadow-inner bg-gray-600 peer-checked:bg-cyan-600"></div>
+                        <div className="w-10 h-6 rounded-full shadow-inner bg-gray-300 peer-checked:bg-gray-700"></div>
                         <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-100"></div>
                     </span>
                     <span>Dark</span>
@@ -67,7 +67,7 @@ const Header = () => {
                             </span>
                         </Dropdown.Header>
                         <Dropdown.Item>
-                            Settings
+                            <Link to='/register'>Settings</Link>
                         </Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item>
@@ -86,27 +86,32 @@ const Header = () => {
                  <Navbar.Toggle />               
             </div>
             <Navbar.Collapse>
-                <NavLink to='/home'>
+                <NavLink to='/home' className={({ isActive }) =>
+						isActive ? "border-b-2 border-slate-800" : undefined}>
                     <Navbar.Link>
                     Home
                     </Navbar.Link>
                 </NavLink>               
-                <NavLink to='/courses'>
+                <NavLink to='/courses' className={({ isActive }) =>
+						isActive ? "border-b-2 border-slate-800" : undefined}>
                     <Navbar.Link>
                     Courses
                     </Navbar.Link>
                 </NavLink>               
-                <NavLink to='/faq'>
+                <NavLink to='/faq' className={({ isActive }) =>
+						isActive ? "border-b-2 border-slate-800" : undefined}>
                     <Navbar.Link>
                     FAQ
                     </Navbar.Link>
                 </NavLink>               
-                <NavLink to='/Blog'>
+                <NavLink to='/Blog' className={({ isActive }) =>
+						isActive ? "border-b-2 border-slate-800" : undefined}>
                     <Navbar.Link>
                       Blog
                     </Navbar.Link>
                 </NavLink>               
-                <NavLink to='/about'>
+                <NavLink to='/about' className={({ isActive }) =>
+						isActive ? "border-b-2 border-slate-800" : undefined}>
                     <Navbar.Link>
                       About us
                     </Navbar.Link>
