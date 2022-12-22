@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UseTitle from '../hooks/UseTitle';
 
 const Home = () => {
+    UseTitle('Home')
     return (
         // Header contents
         <>

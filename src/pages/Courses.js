@@ -1,9 +1,11 @@
 import React from 'react';
 import {  useLoaderData } from 'react-router-dom';
+import UseTitle from '../hooks/UseTitle';
 import CoursePage from './CoursePage';
 import CourseSidebar from './CourseSidebar';
 
 const Courses = () => {
+    UseTitle('Courses');
     const courses = useLoaderData()
     return (
         // course container

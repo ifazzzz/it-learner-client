@@ -3,9 +3,10 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
+import UseTitle from '../hooks/UseTitle';
 
 const Login = () => {
-
+     UseTitle('login');
     const navigate = useNavigate()
 
     const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext)
